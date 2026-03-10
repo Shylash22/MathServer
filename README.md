@@ -65,7 +65,7 @@ math.html
 
 </head>
 
-<body bgcolor="lightyellow">
+<body bgcolor="pink">
 
 <div class="box">
 
@@ -103,38 +103,19 @@ math.html
 </body>
 </html>
 views.py
+
 from django.shortcuts import render
-
 def gst_bill(request):
-
     p = float(request.POST.get('price', '0'))
     g = float(request.POST.get('gst', '0'))
-
     bill = p + (p * g / 100) if request.method == 'POST' else 0
-
     print("price =", p)
     print("gst =", g)
     print("total bill =", bill)
-
     return render(request,'mathapp/math.html',
                   {'p': p, 'g': g, 'bill': bill})
 urls.py
-"""
-URL configuration for sshylash project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
 from mathapp import views
@@ -142,7 +123,6 @@ from mathapp import views
 urlpatterns = [
     path('', views.gst_bill, name='gst_bill'),
 ]
-
 ```
 
 ## OUTPUT - SERVER SIDE:
