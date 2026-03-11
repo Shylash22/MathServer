@@ -126,10 +126,11 @@ urlpatterns = [
 ```
 
 ## OUTPUT - SERVER SIDE:
-![alt text](<Screenshot (7).png>)
+![alt text](<Screenshot (11).png>)
 
 ## OUTPUT - WEBPAGE:
-![alt text](<Screenshot (6).png>)
+![alt text](<Screenshot (10).png>)
+
 
 ## RESULT:
 The a web page to calculate total bill amount with GST from price and GST percentage using server-side scripts is created successfully.
